@@ -9,50 +9,44 @@
     <link href="styles.css" rel="stylesheet">
 </head>
 <body>
+    <div class="language-toggle">
+        <button class="lang-btn active" data-lang="fr">FR</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+    </div>
     <div class="bg-particles" id="particles"></div>
     <div class="container">
         <div class="logo">Nevant Studio</div>
-        <div class="tagline">We are crafting worlds. Stay tuned, we're almost there!</div>
+        <div class="tagline content" data-en="We are crafting worlds. Stay tuned, we're almost there!" data-fr="Nous créons des mondes. Restez à l'écoute, nous y sommes presque !">
+            Nous créons des mondes. Restez à l'écoute, nous y sommes presque !
+        </div>
         
         <div class="actions">
-            <a href="https://discord.gg/GRVvk55Eg5" target="_blank" class="btn">Join Our Discord</a>
+            <a href="https://discord.gg/GRVvk55Eg5" target="_blank" class="btn content" data-en="Join Our Discord" data-fr="Rejoignez Notre Discord">
+                Rejoignez Notre Discord
+            </a>
         </div>
 
         <div class="comic-section">
             <div class="comic-logo">
-                <img src="img/LogoVE.png" alt="Comic Project Logo" />
+                <img src="img/LogoVE-FR.png" 
+                     class="comic-logo-img" 
+                     data-en="img/LogoVE.png" 
+                     data-fr="img/LogoVE-FR.png" 
+                     alt="Vutharial's Environs Logo" />
             </div>
             <div class="comic-info">
-                <div class="comic-title">Vutharial's Environs</div>
-                <div class="comic-description">
-                    Dive into our first comic series - Something strange is happening in the city. Two friends met a strange person who is clearly hiding something, and there's definitely something wrong with him... Wait, what is this robot-
+                <div class="comic-title content" data-en="Vutharial's Environs" data-fr="Environs de Vutharial">
+                    Environs de Vutharial
+                </div>
+                <div class="comic-description content" 
+                     data-en="Dive into our first comic series - Something strange is happening in the city. Two friends met a strange person who is clearly hiding something, and there's definitely something wrong with him... Wait, what is this robot-" 
+                     data-fr="Il se passe quelque chose de bizarre en ville. Deux amis ont rencontré une personne étrange qui cache clairement quelque chose, et il y a manifestement quelque chose qui ne va pas avec lui... Attendez, c'est quoi ce robot-">
+                     Il se passe quelque chose de bizarre en ville. Deux amis ont rencontré une personne étrange qui cache clairement quelque chose, et il y a manifestement quelque chose qui ne va pas avec lui... Attendez, c'est quoi ce robot-
                 </div>
             </div>
         </div>
     </div>
 
-    <script>
-        function createParticles() {
-            const particles = document.getElementById('particles');
-            for (let i = 0; i < 50; i++) {
-                const particle = document.createElement('div');
-                particle.classList.add('particle');
-                particle.style.width = `${Math.random() * 10}px`;
-                particle.style.height = particle.style.width;
-                particle.style.left = `${Math.random() * 100}%`;
-                particle.style.top = `${Math.random() * 100}%`;
-                particle.style.animationDuration = `${Math.random() * 20 + 10}s`;
-                particle.style.opacity = Math.random();
-                particles.appendChild(particle);
-            }
-        }
-
-        createParticles();
-
-        // Comic logo click handler (replace with actual link)
-        document.querySelector('.comic-logo').addEventListener('click', () => {
-            window.open('https://your-comic-project-link.com', '_blank');
-        });
-    </script>
+    <script defer src="scripts.js"></script>
 </body>
 </html>
