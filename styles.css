@@ -4,6 +4,32 @@
     box-sizing: border-box;
 }
 
+.language-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.lang-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #b0b0b0;
+    padding: 8px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+}
+
+.lang-btn.active {
+    background: linear-gradient(to right, #00b4db, #0083b0);
+    color: white;
+    box-shadow: 0 5px 15px rgba(0, 132, 255, 0.3);
+}
+
 body {
     background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
     color: white;
@@ -145,4 +171,57 @@ body {
     0% { transform: translateY(0) rotate(0deg); }
     50% { transform: translateY(-50px) rotate(180deg); }
     100% { transform: translateY(0) rotate(360deg); }
+}
+
+@media (max-width: 768px) {
+    .logo {
+        font-size: 2.5rem;
+    }
+
+    .language-toggle {
+        top: 10px;
+        right: 10px;
+    }
+
+    .container {
+        padding: 30px 15px;
+    }
+
+    .comic-section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .comic-logo {
+        width: 150px;
+        height: 150px;
+    }
+
+    .comic-title {
+        font-size: 1.3rem;
+    }
+
+    .comic-description {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        font-size: 2rem;
+    }
+
+    .tagline {
+        font-size: 0.9rem;
+    }
+
+    .lang-btn {
+        padding: 6px 10px;
+        font-size: 0.8rem;
+    }
+
+    .comic-logo {
+        width: 120px;
+        height: 120px;
+    }
 }
